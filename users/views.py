@@ -23,3 +23,22 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm (request.POST)
+        if form.is_valid():
+            form.save()
+
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data['password1']
+
+            user = authenticate(username=username, password=password)
+            login(request.user)
+
+            return redirect('login')
+    else:
+        form = UserCreationForm(request.POST)
+    
+    return render (request, 'users/register.html', {'form':form})
