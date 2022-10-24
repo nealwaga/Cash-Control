@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'pillow',
     'users',
     'cloudinary',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
