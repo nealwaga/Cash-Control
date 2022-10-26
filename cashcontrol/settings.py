@@ -44,6 +44,18 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
+# Cloudinary Classes
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+#Cloudinary Config
+cloudinary.config( 
+  cloud_name = "dxv5ismd8", 
+  api_key = "839698641748619", 
+  api_secret = "T_Mx9oL-rqgmEoDzyimZqc87kmg" 
+)
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
