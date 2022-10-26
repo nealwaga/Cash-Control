@@ -53,9 +53,9 @@ def expenses(request):
         form = NewExpenditureForm(request.POST)
         if form.is_valid():
             Expenses.user_id = request.user
-            description = form.cleaned_data.get('description')
-            amount = form.cleaned_data.get('amount')
-            category = form.cleaned_data.get('category')
+            description = form.cleaned_data.get('Description')
+            amount = form.cleaned_data.get('Amount')
+            category = form.cleaned_data.get('Category')
             
             p, created = Expenses.objects.get_or_create(description=description, amount=amount, category=category, user=current_user)
             form.save(commit=False)
@@ -85,7 +85,7 @@ def search(request):
             
             p, created = Expenses.objects.get_or_create(description=description, amount=amount, category=category, user=current_user)
             form.save(commit=False)
-            return redirect('Expenses')
+            return redirect('expenses')
     else:
         form = NewExpenditureForm()
     if 'exp' in request.GET and request.GET["exp"]:
