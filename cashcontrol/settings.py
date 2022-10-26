@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'users',
     'cloudinary',
     'crispy_forms',
-    'crispy_boostrap5'
+    'crispy_boostrap5',
+    'dashboard',
 ]
 
 # Cloudinary Classes
