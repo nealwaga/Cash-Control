@@ -11,7 +11,7 @@ class Categories (models.Model):
         return self.category 
 
 
-class EXpenses(models.Model):
+class Expenses(models.Model):
     user = models.ForeignKey (User, on_delete=models.CASCADE)
     category = models.ForeignKey (Categories, on_delete=models.CASCADE)
     description = models.CharField (max_length=50)
