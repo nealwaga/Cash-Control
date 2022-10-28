@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 from unicodedata import category
 
 # Create your models here.
-class Categories (models.Model):
-    catrgory = models.CharField(max_length=25)
+class Categories(models.Model):
+    category = models.CharField(max_length=25)
 
     def __str__(self):
         return self.category 
