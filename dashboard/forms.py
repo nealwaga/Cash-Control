@@ -8,11 +8,11 @@ class IncomeForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['Income']
+        fields = ['income']
 
 
 class NewExpenditureForm(forms.ModelForm):
-    description = forms.CharField(widget=forms.TextINput(attrs={
+    description = forms.CharField(widget=forms.TextInput(attrs={
                                                             'class':'Input',
                                                             'placeholder':'Description of what you have spent on...', }))
 
@@ -23,4 +23,4 @@ class NewExpenditureForm(forms.ModelForm):
 
     class Meta:
         model = Expenses
-        fields = ['Description', 'Amount', 'Category']
+        fields = ['description', 'amount', 'category']
