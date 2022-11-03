@@ -21,6 +21,7 @@ from users import views as user_views
 from wkhtmltopdf.views import PDFTemplateView
 
 #Create here
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dashboard.urls')),
