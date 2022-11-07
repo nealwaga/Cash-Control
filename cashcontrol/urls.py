@@ -19,6 +19,7 @@ from django.urls import include, path
 from django.contrib.auth import views as auth_views
 from users import views as user_views
 from wkhtmltopdf.views import PDFTemplateView
+from django.contrib.auth.views import LoginView, LogoutView
 
 #Create here
 
