@@ -7,7 +7,7 @@ from django.dispatch import receiver
 
 # Create your models here.
 class Profile(models.Model):
-    user = models.OneToOneField (User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField (User, on_delete=models.CASCADE, related_name='Profile')
     image = CloudinaryField ('image')
     name = models.CharField (blank=False, max_length=100)
     bio = models.CharField (blank=True, max_length=65)
@@ -20,10 +20,10 @@ class Profile(models.Model):
         return self.user.username
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f'{self.user.username} - Profile'
 
-    def __str__(self):
-        return self.user
+    # def __str__(self):
+    #     return self.user
 
 
     @receiver (post_save, sender=User)

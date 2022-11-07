@@ -20,10 +20,10 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = ['image', 'name', 'bio', 'income']
 
 
-class UserForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = ['username', 'password1', 'password2']
+# class UserForm(UserCreationForm):
+#     class Meta:
+#         model = User
+#         fields = ['username', 'password1', 'password2']
 
 # class UserForm(UserCreationForm):  
 #     username = forms.CharField(label='username', min_length=5, max_length=150)  
