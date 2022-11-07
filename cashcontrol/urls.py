@@ -27,9 +27,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dashboard.urls')),
     path('', include('users.urls')),
-    # path('accounts/', include('users.urls')),
+    path('accounts/', include('users.urls')),
 
-    path('accounts/', include('registration.backends.simple.urls')),
+    # path('accounts/', include('registration.backends.simple.urls')),
+
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('pdf/', PDFTemplateView.as_view(template_name='dashboard/expenses.html',filename='expenses.pdf'), name='pdf'),
