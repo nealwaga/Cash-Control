@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from django.template.context_processors import csrf
 
 
 # Create your views here.
