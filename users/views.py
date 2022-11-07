@@ -25,11 +25,29 @@ def profile(request):
     return render(request, 'users/profile.html', context)
 
 
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserCreationForm (request.POST)
-#         if form.is_valid():
-#             form.save()
+def register(request):
+      #put a check in place
+    if request.method =='POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data['password1']
+
+            user = authenticate(username=username, password=password)
+            login(request,user)
+            
+            return redirect('login')
+    else:
+        form = UserCreationForm(request.POST)
+    return render(request,'users/register.html',{'form':form})  
+
+# def register(request):  
+#     if request.method == 'POST':  
+#         form = CustomUserCreationForm(request.POST)  
+#         if form.is_valid():  
+#             form.save()  
 
 #             username = form.cleaned_data.get('username')
 #             password = form.cleaned_data['password1']
@@ -38,30 +56,11 @@ def profile(request):
 #             login(request, user)
 
 #             return redirect('login')
-#     else:
-#         form = UserCreationForm(request.POST)
-    
-#     return render (request, 'users/register.html', {'form':form})
 
+#     else:  
+#         form = CustomUserCreationForm(request.POST)  
 
-def register(request):  
-    if request.method == 'POST':  
-        form = CustomUserCreationForm(request.POST)  
-        if form.is_valid():  
-            form.save()  
-
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data['password1']
-
-            user = authenticate(username=username, password=password)
-            login(request, user)
-
-            return redirect('login')
-
-    else:  
-        form = CustomUserCreationForm(request.POST)  
-
-    context = {  
-        'form':form  
-    }  
-    return render(request, 'users/register.html', context)  
+#     context = {  
+#         'form':form  
+#     }  
+#     return render(request, 'users/register.html', context)  
