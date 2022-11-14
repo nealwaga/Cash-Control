@@ -47,7 +47,6 @@ def expenses(request):
     expenses = Expenses.objects.filter(user=current_user).all()
     expenses.reverse()
     
-    
     if request.method == 'POST':
         form = NewExpenditureForm(request.POST)
         if form.is_valid():
