@@ -34,7 +34,11 @@
                 </div>
                 <div class="row m-5 "><form class=" " action="{% url 'register' %}" method="post">
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    {% comment %} {{ form|crispy }} {% endcomment %}
+                    {{form.errors}}
+                    {{form.username}}
+                    {{form.password1}}
+                    {{form.password2}}
                     <div class="mt-5">
                         <input type="checkbox" name="check" id="">
                         <label for="check">Send me promotional emails, deals and events</label>
