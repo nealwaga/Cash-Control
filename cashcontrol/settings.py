@@ -107,7 +107,11 @@ WSGI_APPLICATION = 'cashcontrol.wsgi.application'
 #     }
 # }
 
-
+# NAME = os.getenv("cashcontrol")
+# PORT = os.getenv("cashcontrol")
+# PASSWORD = os.getenv("Wneal9.")
+# HOST = os.getenv("")
+# USER = os.getenv("neal")
 
 DATABASES = {
     'default': {
