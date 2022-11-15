@@ -100,12 +100,12 @@ WSGI_APPLICATION = 'cashcontrol.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # NAME = os.getenv("cashcontrol")
 # PORT = os.getenv("cashcontrol")
@@ -113,14 +113,14 @@ WSGI_APPLICATION = 'cashcontrol.wsgi.application'
 # HOST = os.getenv("")
 # USER = os.getenv("neal")
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cashcontrol',
-        'USER': 'neal',
-        'PASSWORD':'Wneal9.',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'cashcontrol',
+#         'USER': 'neal',
+#         'PASSWORD':'Wneal9.',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
