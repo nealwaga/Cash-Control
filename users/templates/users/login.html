@@ -35,7 +35,7 @@
                 <div class="row m-5 "><form class=" " action="{% url 'login' %}" method="post">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    {{form}}
+                    {% comment %} {{form}} {% endcomment %}
                     <div class="mt-5">
                         <input type="checkbox" name="check" id="">
                         <label for="check">Remember Me</label>
