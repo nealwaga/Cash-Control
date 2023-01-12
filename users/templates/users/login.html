@@ -34,7 +34,7 @@
                 </div>
                 <div class="row m-5 "><form class=" " action="{% url 'login' %}" method="post">
                     {% csrf_token %}
-                    {% comment %} {{ form|crispy }} {% endcomment %}
+                    {{ form|crispy }}
                     {{form}}
                     <div class="mt-5">
                         <input type="checkbox" name="check" id="">
