@@ -44,29 +44,3 @@ def register(request):
         form = UserCreationForm(request.POST)
     return render(request,'users/register.html',{'form':form})  
 
-# def register(request):
-#     if request.method == "POST":
-#         form = UserRegisterForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             # Profile.get_or_create(user=request.user)
-#             username = form.cleaned_data.get('username')
-#             print(username)
-
-#             # Automatically Log In The User
-#             user = authenticate(username=form.cleaned_data['username'],
-#                                     password=form.cleaned_data['password1'],)
-#             print(user)
-#             login(request, user)
-#             # return redirect('editprofile')
-#             return redirect('login')
-            
-
-#     elif request.user.is_authenticated:
-#         return redirect('login')
-#     else:
-#         form = UserRegisterForm()
-#     context = {
-#         'form': form,
-#     }
-#     return render(request, 'users/register.html', context)
